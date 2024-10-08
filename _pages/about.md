@@ -2,24 +2,20 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-
+subtitle: A bit about me...
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  more_info:
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hey, I'm currently a Research Engineer at [Huawei](https://www.huawei.com/en/corporate-information/research-development), working on Retrieval Augmented Generation (RAG) under the supervision of [Jeff Pan](https://scholar.google.com/citations?user=zLDAY8QAAAAJ&hl=es). 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Previously, I completed my Master's degree in AI at [The University of Edinburgh](https://www.ed.ac.uk/c/edinburgh-ai). I did my thesis project on 'Retrofitting Vision Transformers via Token Pooling', supervised by [Edoardo Ponti](https://scholar.google.ca/citations?user=tklL2q0AAAAJ&hl=en) and [Piotr Nawrot](https://scholar.google.com/citations?user=9wrNHUQAAAAJ&hl=en). 
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Before that, I did a BSc in CS at [King's College London](https://www.kcl.ac.uk/informatics). My thesis was on 'Similarity-based Music Recommendation Systems', my supervisor was [Jeroen Keppens](https://scholar.google.co.uk/citations?user=6uEtmfoAAAAJ&hl=de) officially, and my advisors were [Timothy Greer (Amazon Music)](https://scholar.google.com/citations?user=sD2tSQ4AAAAJ&hl=en) and [Minz Won (Suno)](https://scholar.google.com/citations?user=x5rArQMAAAAJ&hl=en).
