@@ -38,6 +38,7 @@ table {
 a,
 table.table a {
   color: var(--global-theme-color);
+  font-weight: 400;
 
   &:hover {
     color: var(--global-theme-color);
@@ -190,8 +191,7 @@ ul.task-list input[type="checkbox"] {
   color: var(--global-theme-color);
 }
 
-// Profile
-
+// Profile styles
 .profile {
   width: 100%;
 
@@ -215,14 +215,39 @@ ul.task-list input[type="checkbox"] {
   margin-right: 1rem;
 }
 
+// Responsive breakpoints
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 20%; // Default width for larger screens
+  }
+}
 
-    .address {
-      p {
-        display: block;
-      }
+// New mobile breakpoints
+@media (max-width: 575px) {
+  .profile {
+    width: 50%; // Smaller width for phones
+    margin-bottom: 1rem; // Keep some bottom spacing
+    
+    img {
+      max-width: 200px; // Maximum image width on mobile
+      display: block; // Needed for proper image handling
+    }
+    
+    &.float-left,
+    &.float-right {
+      float: right !important; // Force right alignment
+      margin: 0 0 1rem 1rem; // Margin left for text wrapping
+    }
+  }
+}
+
+// Even smaller screens
+@media (max-width: 380px) {
+  .profile {
+    width: 70%; // Wider relative width for very small screens
+    
+    img {
+      max-width: 150px; // Even smaller maximum image width
     }
   }
 }
@@ -383,7 +408,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 1.7rem;
 
     a {
       i::before {
