@@ -227,12 +227,12 @@ ul.task-list input[type="checkbox"] {
   .profile {
     width: 50%; // Smaller width for phones
     margin-bottom: 1rem; // Keep some bottom spacing
-    
+
     img {
       max-width: 200px; // Maximum image width on mobile
       display: block; // Needed for proper image handling
     }
-    
+
     &.float-left,
     &.float-right {
       float: right !important; // Force right alignment
@@ -245,7 +245,7 @@ ul.task-list input[type="checkbox"] {
 @media (max-width: 380px) {
   .profile {
     width: 70%; // Wider relative width for very small screens
-    
+
     img {
       max-width: 150px; // Even smaller maximum image width
     }
