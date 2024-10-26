@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://pascualmeritatorres.github.io/sitemap.xml
