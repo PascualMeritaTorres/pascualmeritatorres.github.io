@@ -5,7 +5,7 @@ permalink: /
 subtitle: A bit about me...
 profile:
   align: right
-  image: prof_pic.png
+  image: prof_pic_tinyfied.jpg
   image_circular: false # crops the image to make it circular
   more_info:
 
