@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An incomplete collection of useful Blogs
+title: An incomplete collection of useful Blogs (by other people)
 date: 2024-11-05 16:40:16
 description:
 tags:
