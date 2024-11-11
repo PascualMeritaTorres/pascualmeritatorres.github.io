@@ -15,9 +15,9 @@ Please also note that this list is heeeavily skewed towards my 4 favourite artis
 
 <hr>
 
-- [Jungle - Busy Earnin' | Glastonbury 2019](https://www.youtube.com/watch?v=e8rpp-8a5s0) for the overall quality of the vocals and the synths.
+- [Jungle - Busy Earnin' | Glastonbury 2019](https://www.youtube.com/watch?v=e8rpp-8a5s0)
 
-- [Jungle - Busy Earnin' | Music For Life 2018](https://www.youtube.com/watch?v=x1J6ZbKtHpw) for one of the best intros that I have ever seen.
+- [Jungle - Busy Earnin' | Music For Life 2018](https://www.youtube.com/watch?v=x1J6ZbKtHpw)
 
 - [Parcels - Live Vol. 1](https://www.youtube.com/watch?v=e4TFD2PfVPw&t=1182s)
 
@@ -29,27 +29,35 @@ Please also note that this list is heeeavily skewed towards my 4 favourite artis
 
 - [RÜFÜS DU SOL - Live from Joshua Tree](https://www.youtube.com/watch?v=Zy4KtD98S2c)
 
-- [Anderson Paak & Mac Miller- Dang! - Live](https://www.youtube.com/watch?v=r4C6Kgrloxc) for the amazing groove, especially the keyboard countermelodies.
+- [Anderson Paak & Mac Miller- Dang! - Live](https://www.youtube.com/watch?v=r4C6Kgrloxc)
 
-- [FKJ & Tom Misch - Losing My Way (Live from O2 Academy Brixton)][https://www.youtube.com/watch?v=WZTq5do8v4s] for the improvised sections towards the end.
+- [FKJ & Tom Misch - Losing My Way (Live from O2 Academy Brixton)](https://www.youtube.com/watch?v=WZTq5do8v4s)
 
 - [FKJ | Ylang Ylang EP](https://www.youtube.com/watch?v=pfU0QORkRpY)
 
 - [FKJ - Live at MELT 2019](https://www.youtube.com/watch?v=r2IoFgYV3IA&list=PLJbhug9IoSL1EvNiCoj_yjAI2tHuBYJSF&index=33)
 
-- [Tom Misch - It Runs Through Me](https://www.youtube.com/watch?v=M1N_wbhAfQ4). This is actually not a live performance but the aesthetic is so good I had to include it.
+- [FKJ - Canguu](https://www.youtube.com/watch?v=hM2xWRRYA-k)
+
+- [Tom Misch - It Runs Through Me](https://www.youtube.com/watch?v=M1N_wbhAfQ4)
+
+- [L'Impératrice @ La Felicità for Drop](https://www.youtube.com/watch?v=PmC9FsfUzy0)
 
 - [C. Tangana: Tiny Desk (Home) Concert](https://www.youtube.com/watch?v=SW6L_lTrIFg)
 
 - [Oracle Sisters - Asc. Scorpio / Tramp Like You / RBH](https://www.youtube.com/watch?v=pnUQYxjaWB4)
 
-- [Dabeull Band - Sweet Baby](https://www.youtube.com/watch?v=oTKz4MPd9Jw) for one of the most funky intros (+ I was there)
+- [Dabeull Band - Sweet Baby](https://www.youtube.com/watch?v=oTKz4MPd9Jw)
 
 - [Dabeull Band - Live in Paris](https://www.youtube.com/watch?v=Ik4DBIu8Igc)
 
 - [Dabeull & Rude Jude - Indastudio](https://www.youtube.com/watch?v=IUJTRkrYFwo)
 
 - [Dabeull - So Many Hands - Indastudio](https://www.youtube.com/watch?v=13akCBtddRk)
+
+- [HER - Five Minutes - Live at JITWVHQ](https://www.youtube.com/watch?v=gSsOJfXHk00)
+
+- [L'Impératrice — VACANCES (Live à Dour)](https://www.youtube.com/watch?v=1c1Fp8NRzrs)
 
 - [Air - La Femme d'Argent](https://www.youtube.com/watch?v=1XNpsjpOI8A&list=PLJbhug9IoSL1EvNiCoj_yjAI2tHuBYJSF&index=21)
 
@@ -59,14 +67,24 @@ Please also note that this list is heeeavily skewed towards my 4 favourite artis
 
 - [Jamiroquai - Little L (Live in Verona)](https://www.youtube.com/watch?v=Yi0QlZZ2qo8)
 
-- [Jamiroquai - Time Won't Wait (Live at Scala, London 2007)](https://www.youtube.com/watch?v=ct7ad4FhuJI&list=RDGMEMP-96bLtob-xyvCobnxVfyw&start_radio=1&rv=j8EX6i8hqqo) for the keyboard player, the bass player, and Jamiroquai of course.
+- [Jamiroquai - Time Won't Wait (Live at Scala, London 2007)](https://www.youtube.com/watch?v=ct7ad4FhuJI&list=RDGMEMP-96bLtob-xyvCobnxVfyw&start_radio=1&rv=j8EX6i8hqqo)
 
-- [Jamiroquai - Bad Girls / Singin' in the Rain (Live in Verona)](https://www.youtube.com/watch?v=rMcEwaGz_64&list=RDGMEMP-96bLtob-xyvCobnxVfyw&index=3) for the backing vocals and everything really.
+- [Jamiroquai - Bad Girls / Singin' in the Rain (Live in Verona)](https://www.youtube.com/watch?v=rMcEwaGz_64&list=RDGMEMP-96bLtob-xyvCobnxVfyw&index=3)
 
-- [Nile Rodgers & CHIC: Tiny Desk Concert](https://www.youtube.com/watch?v=pRERgcQe-fQ) for the funk. Everything is on point: the vocals, the funky guitar, the sharp drums, the amazing saxophone...
+- [Nile Rodgers & CHIC: Tiny Desk Concert](https://www.youtube.com/watch?v=pRERgcQe-fQ)
 
-- [Bellaire & Georges - Contrasts](https://www.youtube.com/watch?v=ypG3QUydnaw) for the guitar melodies especially
+- [Bellaire & Georges - Contrasts](https://www.youtube.com/watch?v=ypG3QUydnaw)
 
 - [Mayer Hawthorne - Henny & Gingerale](https://www.youtube.com/watch?v=n5VRejmpMV8)
 
 - [HÆLOS - Pray (Live on KEXP)](https://www.youtube.com/watch?v=32QLuWFfDJY&list=RDGMEMJQXQAmqrnmK1SEjY_rKBGA&index=4)
+
+- [Simply Broke - La Infinita (Mashup)](https://www.youtube.com/watch?v=6sk-AWElVgM)
+
+- [Simply Broke - I wanna Be Like You (Cover)](https://www.youtube.com/watch?v=TWxeMtklESw)
+
+- [Michael Jackson - Don't Stop Til You Get Enough](https://www.youtube.com/watch?v=jtAg8_ltDEo)
+
+- [Michael Jackson - Earth Song](https://www.youtube.com/watch?v=buCdGwH2Efc)
+
+- [BB & Q Band - On The Beat](https://www.youtube.com/watch?v=NbAeffcXRe0)
