@@ -24,7 +24,7 @@ Before that, I completed a BSc in Computer Science at [King's College London](ht
 In general I would say I am mainly motivated by projects with a large tangible impact. As a classically trained musician, some of my first AI-related projects focused on music recommendation, as it was something that directly had an impact on the lives of me and my friend. Now that I am slightly more mature and better understand the bigger picture of the AI landscape, I am moved by topics such as making LLMs more efficient at inference time (code up soon), [analysing LLM activations to detect hallucinations](https://github.com/tberm/mlp_cw4?tab=readme-ov-file), and improving LLMs question-answering performance by improving the retrieval step in RAG (paper up soon).
 
 <br/>
-
+ 
 ```python
 def get_my_email():
     email = "geoffreyhinton@gmail.com"
