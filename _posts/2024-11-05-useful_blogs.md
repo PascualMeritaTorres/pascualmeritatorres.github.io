@@ -4,7 +4,7 @@ title: An incomplete collection of useful Blogs (by other people)
 date: 2024-11-05 16:40:16
 description:
 tags:
-categories: useful-blogposts
+categories: a-bit-of-everything
 ---
 
 There are many influential (and not so influential) people that have spent a lot of time writing their learning and thoughts down. More often than not they come in the form of blogposts. This is an incomplete collection of the ones that I have been reading since September 2024. Hope they are useful!

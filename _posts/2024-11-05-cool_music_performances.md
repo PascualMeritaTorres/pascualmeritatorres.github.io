@@ -4,7 +4,7 @@ title: An incomplete collection of cool Music Performances
 date: 2024-11-05 16:40:16
 description:
 tags:
-categories: useful-blogposts
+categories: personal
 ---
 
 A big part of my life revolves around music. I am classicaly trained on piano by the Professional Conservatory of Music of Valencia, Spain, and I have been producing (electronic) music since the age of 14 or so. This blog serves as a public exhbition of my music taste, with the hope that I can find people with a similar taste (surprisingly this has been very difficult).
