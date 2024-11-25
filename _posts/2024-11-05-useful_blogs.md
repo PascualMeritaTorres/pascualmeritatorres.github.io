@@ -41,6 +41,8 @@ This is a carefully curated collection of blogposts which in my opinion are wort
 
 - Sebastian Ruder's [10 Tips for Research and a PhD](https://www.ruder.io/10-tips-for-research-and-a-phd/#1-read-broadly-)
 
+- Richard Hamming's [You and Your Research](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html?ref=ruder.io)
+
 ## Personal Life
 
 - Spruce Campbell's [Don´t Ask Successful People for Advice](https://spruce.world/blog/dont-ask-successful-people-for-advice.html), instead ask for criticism.
@@ -50,4 +52,9 @@ This is a carefully curated collection of blogposts which in my opinion are wort
 - Spruce Campbell's [Talking to Geniuses](https://spruce.world/blog/talking-to-geniuses.html)
 
 - Paul Graham's [The Right Kind of Stubborn](https://www.paulgraham.com/persistence.html#f1n)
+
   > The persistent (good kind of stubborn) are attached to the goal. The obstinate (bad kind of stubborn) are attached to their ideas about how to reach it.
+
+- Sam Altman's [How to Be Successful](https://blog.samaltman.com/how-to-be-successful)
+
+  > It is much more important to work on the right thing than it is to work many hours.
