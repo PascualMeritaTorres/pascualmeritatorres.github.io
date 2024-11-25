@@ -15,7 +15,7 @@ social: true # includes social icons at the bottom of the page
 latest_posts: false
 ---
 
-I'm currently a Research Engineer at [Huawei](https://www.huawei.com/en/corporate-information/research-development), working on Retrieval Augmented Generation (RAG) under the supervision of [Pavlos Vougiouklis](https://scholar.google.com/citations?hl=en&user=9J7YeR0AAAAJ&view_op=list_works&sortby=pubdate) and [Jeff Pan](https://scholar.google.com/citations?user=zLDAY8QAAAAJ&hl=es). Here are some of my thoughts about small reasoner-like models vs. big models with vast amounts of knowledge.
+I'm currently a Research Engineer at [Huawei](https://www.huawei.com/en/corporate-information/research-development), working on Retrieval Augmented Generation (RAG) under the supervision of [Pavlos Vougiouklis](https://scholar.google.com/citations?hl=en&user=9J7YeR0AAAAJ&view_op=list_works&sortby=pubdate) and [Jeff Pan](https://scholar.google.com/citations?user=zLDAY8QAAAAJ&hl=es). Here are some of my thoughts about small reasoner-like models vs. large models with vast amounts of knowledge.
 
 Previously, I completed my Master's degree in AI at [The University of Edinburgh](https://www.ed.ac.uk/c/edinburgh-ai). There, I explored how 'Retrofitting Vision Transformers via Token Pooling' can increase inference-time efficiency by up to 1.4x with only minimal impact on accuracy. My work was supervised by [Edoardo Ponti](https://scholar.google.ca/citations?user=tklL2q0AAAAJ&hl=en) and [Piotr Nawrot](https://scholar.google.com/citations?user=9wrNHUQAAAAJ&hl=en).
 

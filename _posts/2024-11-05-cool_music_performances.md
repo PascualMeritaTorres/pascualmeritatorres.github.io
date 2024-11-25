@@ -7,17 +7,17 @@ tags:
 categories: personal
 ---
 
-A big part of my life revolves around music. I am classicaly trained on piano by the Professional Conservatory of Music of Valencia, Spain, and I have been producing (electronic) music since the age of 14 or so. This blog serves as a public exhbition of my music taste, with the hope that I can find people with a similar taste (surprisingly this has been very difficult).
+A big part of my life revolves around music. I am classicaly trained on piano by the Professional Conservatory of Music of Valencia, Spain, and I have been producing (electronic) music since the age of 14 or so. This blog serves as a display of my music taste, with the hope that I can find people with a similar taste (surprisingly this has been very difficult).
 
-The only requirement for these recopilation of videos is that they have to be live (or pseudo-live) performances.
+The only requirement for this recopilation of videos is that they have to be live (or pseudo-live) performances.
 
 Please also note that this list is heeeavily skewed towards my 4 favourite artists: Jungle, Parcels, Jamiroquai, and Dabeull. It is also heavily skewed towards the bands that release studio quality recordings of their live performances.
 
 <hr>
 
-- [Jungle - Busy Earnin' | Glastonbury 2019](https://www.youtube.com/watch?v=e8rpp-8a5s0)
+- [Jungle - Busy Earnin', Glastonbury 2019](https://www.youtube.com/watch?v=e8rpp-8a5s0)
 
-- [Jungle - Busy Earnin' | Music For Life 2018](https://www.youtube.com/watch?v=x1J6ZbKtHpw)
+- [Jungle - Busy Earnin', Music For Life 2018](https://www.youtube.com/watch?v=x1J6ZbKtHpw)
 
 - [Parcels - Live Vol. 1](https://www.youtube.com/watch?v=e4TFD2PfVPw&t=1182s)
 
@@ -33,7 +33,7 @@ Please also note that this list is heeeavily skewed towards my 4 favourite artis
 
 - [FKJ & Tom Misch - Losing My Way (Live from O2 Academy Brixton)](https://www.youtube.com/watch?v=WZTq5do8v4s)
 
-- [FKJ | Ylang Ylang EP](https://www.youtube.com/watch?v=pfU0QORkRpY)
+- [FKJ, Ylang Ylang EP](https://www.youtube.com/watch?v=pfU0QORkRpY)
 
 - [FKJ - Live at MELT 2019](https://www.youtube.com/watch?v=r2IoFgYV3IA&list=PLJbhug9IoSL1EvNiCoj_yjAI2tHuBYJSF&index=33)
 

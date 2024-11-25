@@ -4,14 +4,14 @@ title: An incomplete collection of useful Blogs (by other people)
 date: 2024-11-05 16:40:16
 description:
 tags:
-categories: a-bit-of-everything
+categories: useful
 ---
 
-There are many influential (and not so influential) people that have spent a lot of time writing their learning and thoughts down. More often than not they come in the form of blogposts. This is an incomplete collection of the ones that I have been reading since September 2024. Hope they are useful!
+This is a carefully curated collection of blogposts which in my opinion are worth a read. I'm positively surprised by the sheer amount of influential (and not so influential) people that spend a lot of their free time writing down their thoughts and learnings. Enjoy!
 
 <hr>
 
-## AI-related
+## AI-related (Technical)
 
 #### Classics
 
@@ -23,19 +23,23 @@ There are many influential (and not so influential) people that have spent a lot
 
 #### Non-Classics (Yet)?
 
-- Tim Rocktäschel's [Advice for Short-term Machine Learning Research Projects](https://rockt.github.io/2018/08/29/msc-advice)
-
 - Evan Miller´s [Attention is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html)
 
-- Sebastian Ruder's [10 Tips for Research and a PhD](https://www.ruder.io/10-tips-for-research-and-a-phd/#1-read-broadly-)
+<hr>
+
+## AI-related (Non-Technical)
+
+- Tim Rocktäschel's [Advice for Short-term Machine Learning Research Projects](https://rockt.github.io/2018/08/29/msc-advice)
+
+- Mor Harchol-Balter's [Applying to Ph.D. Programs in CS](https://www.cs.cmu.edu/~harchol/gradschooltalk.pdf)
+
+- Jason Eisner's [How to Read a Paper](https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html)
 
 - Jason Eisner's [Write the Paper First](https://www.cs.jhu.edu/~jason/advice/write-the-paper-first.html?ref=ruder.io)
 
   > There are 2 reasons a paper will be cited. 1) If you have a great implementation that people can just use as a black box. 2) Otherwrise, your paper is only useful for the ideas that it provides.
 
-- Jason Eisner's [How to Read a Paper](https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html)
-
-<hr>
+- Sebastian Ruder's [10 Tips for Research and a PhD](https://www.ruder.io/10-tips-for-research-and-a-phd/#1-read-broadly-)
 
 ## Personal Life
 
