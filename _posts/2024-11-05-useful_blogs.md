@@ -19,11 +19,13 @@ This is a carefully curated collection of blogposts which in my opinion are wort
 
   > "building how we think we think does not work in the long run"
 
-- Andrej Karpathy's [A Survival Guide to a PhD](https://karpathy.github.io/2016/09/07/phd/), which in my opinion is completely generalisable to doing research in general, not only during a PhD. In fact, I think some of his thoughts (such as developing taste) are applicable to working in almost any job in general.
-
 #### Non-Classics (Yet)?
 
 - Evan Miller´s [Attention is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html)
+
+- Aidan McLaughlin's [The Problem with (LLM) Reasoners](https://aidanmclaughlin.notion.site/reasoners-problem)
+
+- Yi Tay's [What happened to BERT & T5? On Transformer Encoders, PrefixLM and Denoising Objectives](https://www.yitay.net/blog/model-architecture-blogpost-encoders-prefixlm-denoising)
 
 <hr>
 
@@ -32,6 +34,8 @@ This is a carefully curated collection of blogposts which in my opinion are wort
 - Tim Rocktäschel's [Advice for Short-term Machine Learning Research Projects](https://rockt.github.io/2018/08/29/msc-advice)
 
 - Mor Harchol-Balter's [Applying to Ph.D. Programs in CS](https://www.cs.cmu.edu/~harchol/gradschooltalk.pdf)
+
+- Andrej Karpathy's [A Survival Guide to a PhD](https://karpathy.github.io/2016/09/07/phd/), which in my opinion is completely generalisable to doing research in general, not only during a PhD. In fact, I think some of his thoughts (such as developing taste) are applicable to working in almost any job in general.
 
 - Jason Eisner's [How to Read a Paper](https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html)
 
