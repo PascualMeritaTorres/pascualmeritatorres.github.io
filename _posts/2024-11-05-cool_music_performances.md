@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An incomplete collection of cool Music Performances
+title: Cool Music Performances (only live performances)
 date: 2024-11-05 16:40:16
 description:
 tags:
@@ -9,7 +9,7 @@ categories: personal
 
 A big part of my life revolves around music. I am classicaly trained on piano by the Professional Conservatory of Music of Valencia, Spain, and I have been producing (electronic) music since the age of 14 or so. This blog serves as a display of my music taste, with the hope that I can find people with a similar taste (surprisingly this has been very difficult).
 
-The only requirement for this recopilation of videos is that they have to be live (or pseudo-live) performances.
+The only requirement for this recopilation of music performances is that they are live (or pseudo-live).
 
 Please also note that this list is heeeavily skewed towards my 4 favourite artists: Jungle, Parcels, Jamiroquai, and Dabeull. It is also heavily skewed towards the bands that release studio quality recordings of their live performances.
 

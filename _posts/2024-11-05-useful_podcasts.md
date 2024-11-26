@@ -1,13 +1,13 @@
 ---
 layout: post
-title: An incomplete collection of useful Podcasts/Videos
+title: Useful Podcasts / Videos
 date: 2024-11-05 16:40:16
 description:
 tags:
 categories: useful
 ---
 
-Some (or probably I should say a lot) of the content that I consume daily is in the form of podcasts or youtube videos in general. I just wanted to store all of the good ones I have seen somewhere, and hopefully this can help someone too.
+Some (or I should probably say a lot) of the content that I consume on a daily basis is in the form of podcasts or youtube videos in general. This is an incomplete collection of all of the ones that might be useful to someone with a similar background to me.
 
 <hr>
 

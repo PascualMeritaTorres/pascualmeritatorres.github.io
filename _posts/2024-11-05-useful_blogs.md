@@ -1,13 +1,13 @@
 ---
 layout: post
-title: An incomplete collection of useful Blogs (by other people)
+title: Useful Blogs (written by other people)
 date: 2024-11-05 16:40:16
 description:
 tags:
 categories: useful
 ---
 
-This is a carefully curated collection of blogposts which in my opinion are worth a read. I'm positively surprised by the sheer amount of influential (and not so influential) people that spend a lot of their free time writing down their thoughts and learnings. Enjoy!
+This is a carefully curated (and still incomplete) collection of blogposts which in my opinion are worth a read. I'm positively surprised by the sheer amount of influential (and not so influential) people that spend a lot of their free time writing down their thoughts and learnings. Enjoy!
 
 <hr>
 
