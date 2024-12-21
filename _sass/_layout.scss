@@ -2,10 +2,47 @@
  * Content
  ******************************************************************************/
 
+@font-face {
+  font-family: "ibm";
+  src: url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-ExtraLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm";
+  src: url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm";
+  src: url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm";
+  src: url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm";
+  src: url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
 body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  font-family: "ibm";
+  font-weight: 300; // This sets the default weight to Light
 
   h1,
   h2,
@@ -14,6 +51,7 @@ body {
   h5,
   h6 {
     scroll-margin-top: 66px;
+    font-family: "ibm";
   }
 }
 

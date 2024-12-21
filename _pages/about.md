@@ -24,13 +24,13 @@ Before that, I earned a BSc in Computer Science from King's College London. My t
 Overall, I would say I am driven by projects that have a significant, tangible impact. As a classically trained musician, my initial projects centered around music recommendations, as it was an area that directly affected me and my friends. Now, with a more mature understanding of the AI landscape, I am passionate about topics such as enhancing the efficiency of LLMs at inference time (code coming soon), [analyzing LLM activations to detect hallucinations](https://github.com/tberm/mlp_cw4?tab=readme-ov-file), and improving the question-answering performance of LLMs by improving their retrieval capabilities (paper submitted to ACL 2024).
 
 <br/>
- 
+
 ```python
-def get_my_email():
-    email = "geoffreyhinton@gmail.com"
-    if not_a_robot:
+def get_my_email(self):
+    email = "definitely.not.a.bot@gmail.com"
+    if self.not_a_bot:
         name = "Pascual Merita Torres"
         parts = name.lower().split()
-        email = f"{parts[0][0]}{''.join(parts[1:])}@gmail.com"
+        email = f"{parts[0][0]}{parts[1]}{parts[2]}@gmail.com"
     return email
 ```

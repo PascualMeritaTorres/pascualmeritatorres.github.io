@@ -47,6 +47,10 @@ This is a carefully curated (and still incomplete) collection of blogposts which
 
 - Richard Hamming's [You and Your Research](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html?ref=ruder.io)
 
+- Jakob Foerster's [How to ML Paper](https://docs.google.com/document/d/16R1E2ExKUCP5SlXWHr-KzbVDx9DBUclra-EbU8IB-iE/edit?tab=t.0#heading=h.16t67gkeu9dx)
+
+- Tim Dettmers's [Machine Learning PhD Applications - Everything You Need to Know](https://timdettmers.com/2018/11/26/phd-applications/)
+
 ## Personal Life
 
 - Spruce Campbell's [Don´t Ask Successful People for Advice](https://spruce.world/blog/dont-ask-successful-people-for-advice.html), instead ask for criticism.
@@ -62,3 +66,7 @@ This is a carefully curated (and still incomplete) collection of blogposts which
 - Sam Altman's [How to Be Successful](https://blog.samaltman.com/how-to-be-successful)
 
   > It is much more important to work on the right thing than it is to work many hours.
+
+- Paul Graham's [Taste for Makers](https://paulgraham.com/taste.html)
+
+  > When you're forced to be simple, you're forced to face the real problem. When you can't deliver ornament, you have to deliver substance.

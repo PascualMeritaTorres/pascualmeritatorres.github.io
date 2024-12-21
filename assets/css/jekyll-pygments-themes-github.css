@@ -1,21 +1,17 @@
 /* Modified VSCode light theme colors for Rouge - More saturated, professional palette */
 .highlight {
-  background-color: #fbfbfb;
-}
-
-.highlight .hll {
-  background-color: #a29489;
+  background-color: #f6f4f436;
 }
 
 /* Function definition 'def' */
 .highlight .k,
 .highlight .kd {
-  color: #7b1fa2; /* Deep purple for keywords */
+  color: #ce4870; /* Deep purple for keywords */
 }
 
 /* Function name 'get_my_email' */
 .highlight .nf {
-  color: #496dc1; /* Deep blue for functions */
+  color: #4767b0; /* Deep blue for functions */
 }
 
 /* Parentheses () */
@@ -27,17 +23,12 @@
 .highlight .s,
 .highlight .s1,
 .highlight .s2 {
-  color: #965a50; /* Deep orange-red for strings */
+  color: #228871; /* Deep orange-red for strings */
 }
 
 /* Variable names (email, name, parts) */
 .highlight .n {
   color: #424242; /* grey for variables */
-}
-
-/* Conditional keyword 'if' */
-.highlight .cf {
-  color: #7b1fa2; /* Deep purple for control flow */
 }
 
 /* Built-in functions (split, join) */
