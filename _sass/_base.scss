@@ -210,31 +210,38 @@ ul.task-list input[type="checkbox"] {
 }
 
 .profile.float-right {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .profile.float-left {
-  margin-right: 1rem;
+  margin-right: 0rem;
 }
 
-// Responsive breakpoints
-@media (min-width: 576px) {
+// Full Screen - Desktop
+@media (min-width: 992px) {
   .profile {
     width: 20%; // Default width for larger screens
   }
 }
 
-// New mobile breakpoints
+// Mid-way - Tablet/iPad
+@media (min-width: 576px) and (max-width: 991px) {
+  .profile {
+    width: 30%; // Medium width for tablets
+  }
+}
+
+// Mobile
 @media (max-width: 575px) {
   .profile {
-    width: 50%; // Smaller width for phones
+    width: 100%; // Full width for phones
     margin-bottom: 1rem; // Keep some bottom spacing
-
+    
     img {
-      max-width: 200px; // Maximum image width on mobile
+      max-width: 400px; // Maximum image width on mobile
       display: block; // Needed for proper image handling
     }
-
+    
     &.float-left,
     &.float-right {
       float: right !important; // Force right alignment
@@ -243,16 +250,6 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-// Even smaller screens
-@media (max-width: 380px) {
-  .profile {
-    width: 70%; // Wider relative width for very small screens
-
-    img {
-      max-width: 150px; // Even smaller maximum image width
-    }
-  }
-}
 
 .post-description {
   margin-bottom: 2rem;
