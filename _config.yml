@@ -9,7 +9,7 @@ last_name: Merita
 email:
 description: My Personal Website.
 footer_text:
-keywords: AI, Artificial Intelligence, Machine Learning, Personal Website, Pascual Merita, Pascual Merita Torres, University of Edinburgh, NLP, Natural Language Processing # add your own keywords or leave empty
+keywords: AI, Artificial Intelligence, Machine Learning, Personal Website, Pascual Merita, Pascual Merita Torres, University of Edinburgh, NLP, Natural Language Processing, Deep Learning, Information Retrieval, Huawei # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: initial2.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -92,7 +92,7 @@ pinterest_id: # your pinterest id
 publons_id: # your ID on Publons
 quora_username: # your Quora username
 research_gate_profile: # your profile on ResearchGate
-scholar_userid: # your Google Scholar ID
+scholar_userid: ELFUIUUAAAAJ # your Google Scholar ID
 scopus_id: # your profile on Scopus
 semanticscholar_id: # your Semantic Scholar ID
 spotify_id: # your spotify id
