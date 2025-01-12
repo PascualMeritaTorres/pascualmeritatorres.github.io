@@ -21,6 +21,8 @@ in progress.. come back in a few weeks
 
 - [Dynamic Memory Compression: Retrofitting LLMs for Accelerated Inference](https://arxiv.org/pdf/2403.09636)
 
+- [Training Large Language Models to Reason in a Continuous Latent Space](https://arxiv.org/abs/2412.06769)
+
 #### Agents
 
 - [SakanaAI's AI Scientist](https://github.com/SakanaAI/AI-Scientist) and its associated [paper](https://arxiv.org/pdf/2408.06292)

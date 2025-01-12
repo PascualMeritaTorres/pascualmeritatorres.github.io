@@ -70,3 +70,7 @@ This is a carefully curated (and still incomplete) collection of blogposts which
 - Paul Graham's [Taste for Makers](https://paulgraham.com/taste.html)
 
   > When you're forced to be simple, you're forced to face the real problem. When you can't deliver ornament, you have to deliver substance.
+
+- ['The Secretary Problem'](https://www.washingtonpost.com/news/wonk/wp/2016/02/16/when-to-stop-dating-and-settle-down-according-to-math/)
+
+- Robert Wiblin's ['The Secretary Problem' is too bad a match for real life to usefully inform our decisions](https://medium.com/@robertwiblin/the-secretary-problem-is-too-bad-a-match-for-real-life-to-usefully-inform-our-decisions-so-1cd29ae01024)
