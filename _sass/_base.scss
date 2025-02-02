@@ -4,8 +4,8 @@
 
 // Typography
 
+a,
 p,
-h1,
 h2,
 h3,
 h4,
@@ -16,6 +16,11 @@ div,
 li,
 span,
 strong {
+  color: var(--global-text-color-dark);
+}
+
+
+p {
   color: var(--global-text-color);
 }
 
@@ -39,11 +44,11 @@ table {
 
 a,
 table.table a {
-  color: var(--global-theme-color);
+  color: var(--global-text-color-dark);
   font-weight: 400;
 
   &:hover {
-    color: var(--global-theme-color);
+    color: var(--global-text-color-dark);
     text-decoration: underline;
   }
 
@@ -314,11 +319,11 @@ ul.task-list input[type="checkbox"] {
   }
 
   .navbar-brand {
-    color: var(--global-text-color);
+    color: var(--global-text-color-dark);
   }
 
   .navbar-nav .nav-item .nav-link {
-    color: var(--global-text-color);
+    color: var(--global-text-color-dark);
 
     &:hover {
       color: var(--global-hover-color);
@@ -327,7 +332,7 @@ ul.task-list input[type="checkbox"] {
 
   .navbar-nav .nav-item.active > .nav-link {
     background-color: inherit;
-    font-weight: bolder;
+    font-weight: 500;
     color: var(--global-theme-color);
 
     &:hover {
@@ -342,7 +347,7 @@ ul.task-list input[type="checkbox"] {
 
     a {
       i::before {
-        color: var(--global-text-color);
+        color: var(--global-text-color-dark);
         transition-property: all 0.2s ease-in-out;
       }
 
@@ -631,7 +636,7 @@ footer.sticky-bottom {
     }
 
     a {
-      color: var(--global-text-color);
+      color: var(--global-text-color-dark);
       text-decoration: none;
 
       &:hover {
