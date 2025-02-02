@@ -197,6 +197,12 @@ ul.task-list input[type="checkbox"] {
 .profile {
   width: 100%;
 
+  img {
+    max-width: 600px; // Increase this value to make the image larger
+    width: 100%; // Ensure the image scales responsively
+    height: auto; // Maintain aspect ratio
+  }
+
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
@@ -220,14 +226,14 @@ ul.task-list input[type="checkbox"] {
 // Full Screen - Desktop
 @media (min-width: 992px) {
   .profile {
-    width: 20%; // Default width for larger screens
+    width: 32%; // Default width for larger screens
   }
 }
 
 // Mid-way - Tablet/iPad
 @media (min-width: 576px) and (max-width: 991px) {
   .profile {
-    width: 30%; // Medium width for tablets
+    width: 40%; // Medium width for tablets
   }
 }
 
@@ -235,7 +241,7 @@ ul.task-list input[type="checkbox"] {
 @media (max-width: 575px) {
   .profile {
     width: 100%; // Full width for phones
-    margin-bottom: 1rem; // Keep some bottom spacing
+    margin-bottom: 0.5rem; // Keep some bottom spacing
     
     img {
       max-width: 400px; // Maximum image width on mobile
@@ -400,6 +406,29 @@ ul.task-list input[type="checkbox"] {
     color: var(--global-hover-color);
   }
 }
+
+// Full Screen - Desktop
+@media (min-width: 992px) {
+  .mt-5 {
+    margin-top: 2rem !important ; // Adjust this value to reduce the space
+  }
+}
+
+// Mid-way - Tablet/iPad
+@media (min-width: 576px) and (max-width: 991px) {
+  .mt-5 {
+    margin-top: 1.5rem !important ; // Adjust this value to reduce the space
+  }
+}
+
+// Adjust the header margin for mobile devices
+@media (max-width: 575px) {
+  .mt-5 {
+    margin-top: 1.5rem !important ; // Adjust this value to reduce the space
+  }
+}
+
+
 
 // Social (bottom)
 
