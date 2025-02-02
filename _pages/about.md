@@ -6,6 +6,7 @@ subtitle: A bit about me...
 profile:
   align: right
   image: morocco_profile_picture.jpg
+  mobile_image: morocco_profile_picture_more_cropped.jpg
   image_circular: false # crops the image to make it circular
   more_info:
 

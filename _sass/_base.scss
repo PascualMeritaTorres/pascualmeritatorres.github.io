@@ -208,6 +208,10 @@ ul.task-list input[type="checkbox"] {
     height: auto; // Maintain aspect ratio
   }
 
+  .mobile-profile-image {
+    display: none; /* Hide mobile image by default */
+  }
+
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
@@ -245,18 +249,23 @@ ul.task-list input[type="checkbox"] {
 // Mobile
 @media (max-width: 575px) {
   .profile {
-    width: 100%; // Full width for phones
-    margin-bottom: 0.5rem; // Keep some bottom spacing
+    width: 100%;
+    margin-bottom: 0.5rem;
     
-    img {
-      max-width: 400px; // Maximum image width on mobile
-      display: block; // Needed for proper image handling
+    img:not(.mobile-profile-image) {
+      display: none; /* Hide the desktop image */
+    }
+    
+    .mobile-profile-image {
+      display: block; /* Show the mobile image */
+      max-width: 400px;
+      width: 100%;
     }
     
     &.float-left,
     &.float-right {
-      float: right !important; // Force right alignment
-      margin: 0 0 1rem 1rem; // Margin left for text wrapping
+      float: right !important;
+      margin: 0 0 1rem 1rem;
     }
   }
 }
