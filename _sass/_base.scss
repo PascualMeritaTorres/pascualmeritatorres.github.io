@@ -170,6 +170,15 @@ ul.task-list input[type="checkbox"] {
   margin-top: 0.75rem;
   margin-bottom: 1.5rem;
   text-align: center;
+
+  /* Add these new rules */
+  mjx-container {
+    display: inline-block !important;
+  }
+  
+  .MathJax {
+    display: inline !important;
+  }
 }
 
 // Card
