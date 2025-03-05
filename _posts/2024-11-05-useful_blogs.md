@@ -27,6 +27,8 @@ This is a carefully curated (and still incomplete) collection of blogposts which
 
 - Yi Tay's [What happened to BERT & T5? On Transformer Encoders, PrefixLM and Denoising Objectives](https://www.yitay.net/blog/model-architecture-blogpost-encoders-prefixlm-denoising)
 
+- Kevin Liu's [Large Language Models can Simulate Everything](https://kliu.io/post/llms-can-simulate-everything/)
+
 <hr>
 
 ## AI-related (Non-Technical)
@@ -74,3 +76,7 @@ This is a carefully curated (and still incomplete) collection of blogposts which
 - ['The Secretary Problem'](https://www.washingtonpost.com/news/wonk/wp/2016/02/16/when-to-stop-dating-and-settle-down-according-to-math/)
 
 - Robert Wiblin's ['The Secretary Problem' is too bad a match for real life to usefully inform our decisions](https://medium.com/@robertwiblin/the-secretary-problem-is-too-bad-a-match-for-real-life-to-usefully-inform-our-decisions-so-1cd29ae01024)
+
+- Kevin Liu's [How do you find your people, when searching is itself an antipattern?](https://kliu.io/post/searching-for-community/)
+
+- Sam Altman's [Advice for ambitious 19 year olds](https://blog.samaltman.com/advice-for-ambitious-19-year-olds)
