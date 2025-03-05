@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The A* (and D*) Algorithm, A Programmer's Guide to Life Decisions
+title: The A* and D* Algorithms, A Programmer's Guide to Life Decisions
 date: 2025-01-07 16:40:16
 description:
 tags:
