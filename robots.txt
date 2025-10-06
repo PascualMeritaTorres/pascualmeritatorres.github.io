@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://pascualmeritatorres.github.io/sitemap.xml
+Sitemap: https://www.pascualmerita.com/sitemap.xml
