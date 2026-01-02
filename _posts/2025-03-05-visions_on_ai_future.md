@@ -8,7 +8,7 @@ categories: ai-related
 ---
 
 <hr>
-I'm writing this on March 5th, 2025, sharing my current take on where AI is headed. Like anyone trying to predict the future, I'll probably miss the mark on some (or many) of these points - but hey, that's part of the fun of making predictions. 
+I'm writing this on March 5th, 2025, sharing my current take on where AI is headed. Like anyone trying to predict the future, I'll probably miss the mark on some (or many) of these points - but hey, that's part of the fun of making predictions.
 
 - The path to artificial super-intelligence likely lies in pre-trained foundation models (trained on next multimodal token prediction) that continually learn through reinforcement learning as they encounter new data and interact with the environment (this is called continual reinforcement learning).
 
@@ -27,5 +27,4 @@ I'm writing this on March 5th, 2025, sharing my current take on where AI is head
 - Each of us will have a personalised AI assistant, customised to our unique data and goals.
 
 - While humans can learn through passive observation alone, they achieve optimal learning gains by alternating between observing and taking action. This same principle will be applied to AI systems, particularly embodied agents.
-  
 - Foundational model companies currently compete in an environment where users can easily switch platforms (Claude, ChatGPT, Perplexity, Gemini). The future market may shift toward tool-based subscriptions like Cursor (for coding) or Notion (for writing) that manage multiple models through a single subscription. This won't create winner-take-all scenarios but will change how consumers access AI capabilities.

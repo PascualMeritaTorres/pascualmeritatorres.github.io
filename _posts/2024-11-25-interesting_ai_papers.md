@@ -14,7 +14,7 @@ in progress.. come back in a few weeks
 ##### Multimodal
 
 - [Imagine while Reasoning in Space: Multimodal Visualization-of-Thought](https://arxiv.org/pdf/2501.07542)
-  
+
 <hr>
 
 ##### Vision

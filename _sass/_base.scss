@@ -19,7 +19,6 @@ strong {
   color: var(--global-text-color-dark);
 }
 
-
 p {
   color: var(--global-text-color);
 }
@@ -39,8 +38,6 @@ table {
     font-weight: bold;
   }
 }
-
-
 
 a,
 table.table a {
@@ -175,7 +172,7 @@ ul.task-list input[type="checkbox"] {
   mjx-container {
     display: inline-block !important;
   }
-  
+
   .MathJax {
     display: inline !important;
   }
@@ -260,17 +257,17 @@ ul.task-list input[type="checkbox"] {
   .profile {
     width: 100%;
     margin-bottom: 0.5rem;
-    
+
     img:not(.mobile-profile-image) {
       display: none; /* Hide the desktop image */
     }
-    
+
     .mobile-profile-image {
       display: block; /* Show the mobile image */
       max-width: 400px;
       width: 100%;
     }
-    
+
     &.float-left,
     &.float-right {
       float: right !important;
@@ -278,7 +275,6 @@ ul.task-list input[type="checkbox"] {
     }
   }
 }
-
 
 .post-description {
   margin-bottom: 2rem;
@@ -451,8 +447,6 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-
-
 // Social (bottom)
 
 .social {
@@ -613,7 +607,7 @@ footer.sticky-bottom {
       color: var(--global-text-color-light);
     }
 
-    a { 
+    a {
       font-weight: 300;
     }
   }
