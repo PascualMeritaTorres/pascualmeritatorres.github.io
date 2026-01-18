@@ -1,0 +1,171 @@
+---
+layout: midi-art
+title: Text to MIDI Art
+app_css: /projects/midi-art/styles.css
+---
+
+<div class="device-wrapper">
+  <div class="device">
+    <!-- Corner Screws -->
+    <div class="screw screw-tl"></div>
+    <div class="screw screw-tr"></div>
+    <div class="screw screw-bl"></div>
+    <div class="screw screw-br"></div>
+
+    <!-- Header Section -->
+    <header class="device-header">
+      <div class="header-left">
+        <div class="vent-grid"></div>
+        <div class="header-title">
+          <span class="model">TXT-2MA</span>
+          <span class="model-sub">TEXT TO MIDI ART GENERATOR</span>
+        </div>
+      </div>
+
+      <!-- Transport (centered) -->
+      <div class="header-center">
+        <div class="header-transport">
+          <button class="hw-button-mini hw-button-grey" id="play-btn" title="PLAY/PAUSE">
+            <svg class="btn-icon" id="play-icon" viewBox="0 0 24 24" width="12" height="12">
+              <polygon points="8,5 19,12 8,19" fill="currentColor" />
+            </svg>
+            <svg class="btn-icon" id="pause-icon" viewBox="0 0 24 24" width="12" height="12" style="display: none">
+              <rect x="6" y="5" width="4" height="14" fill="currentColor" />
+              <rect x="14" y="5" width="4" height="14" fill="currentColor" />
+            </svg>
+          </button>
+          <button class="hw-button-mini hw-button-red" id="stop-btn" title="RESET">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="10" height="10">
+              <rect x="6" y="6" width="12" height="12" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tempo & Zoom (right) -->
+      <div class="header-right">
+        <div class="header-tempo">
+          <button class="hw-button-tiny" id="tempo-down">−</button>
+          <span class="control-value"><span id="tempo-value">120</span> BPM</span>
+          <button class="hw-button-tiny" id="tempo-up">+</button>
+        </div>
+
+        <div class="header-divider"></div>
+
+        <div class="header-zoom">
+          <button class="hw-button-tiny" id="zoom-out-btn">−</button>
+          <span class="control-value">ZOOM</span>
+          <button class="hw-button-tiny" id="zoom-in-btn">+</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- LCD Display Section (Piano Roll) -->
+    <section class="lcd-section">
+      <div class="lcd-frame">
+        <div class="lcd-screen">
+          <button class="clear-notes-btn" id="clear-notes-btn" title="Clear all notes" style="display: none">
+            <svg viewBox="0 0 24 24" width="12" height="12">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            </svg>
+            CLEAR
+          </button>
+          <div class="piano-roll-container">
+            <div class="piano-keyboard" id="piano-keyboard"></div>
+            <div class="piano-grid-wrapper" id="piano-grid-wrapper">
+              <canvas id="piano-grid"></canvas>
+              <div class="playhead" id="playhead"></div>
+              <div class="notes-container" id="notes-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lcd-labels">
+        <span class="lcd-label lcd-label-left">SEQUENCE DISPLAY</span>
+        <span class="lcd-label lcd-label-right" id="status-indicator">READY</span>
+      </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <!-- Control Panel Unit -->
+      <div class="control-panel">
+        <div class="control-panel-inner">
+          <div class="control-input-group">
+            <div class="input-frame">
+              <input type="text" id="text-input" class="text-input" placeholder="ENTER TEXT..." maxlength="30" autocomplete="off" />
+              <div class="char-display"><span id="char-count">0</span>/30</div>
+            </div>
+            <span class="control-panel-label">TEXT INPUT</span>
+          </div>
+          <div class="control-generate-group">
+            <button class="hw-button hw-button-black generate-btn-large" id="generate-btn" title="GENERATE">
+              <svg class="btn-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <span class="control-panel-label">GENERATE</span>
+          </div>
+        </div>
+      </div>
+      <div id="input-error" class="error-message"></div>
+
+      <!-- Presets Row -->
+      <div class="presets-row">
+        <span class="presets-label">PRESETS</span>
+        <div class="presets-buttons">
+          <button class="preset-btn preset-btn-chunky" data-preset="HELLO">HELLO</button>
+          <button class="preset-btn preset-btn-chunky" data-preset="MUSIC">MUSIC</button>
+          <button class="preset-btn preset-btn-chunky" data-preset="LOVE">LOVE</button>
+          <button class="preset-btn preset-btn-chunky" data-preset="HI MOM">HI MOM</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Status -->
+    <footer class="device-footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div class="footer-left">
+          <span>SYSTEM STATUS: OK</span>
+          <span>NOTES: <span id="note-count">0</span></span>
+        </div>
+        <div class="footer-right">
+          <button class="hw-button hw-button-grey export-btn-footer" id="export-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="10" height="10">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor" />
+            </svg>
+            <span>EXPORT MIDI</span>
+          </button>
+          <div class="footer-branding">
+            <span>TXT-2MA</span>
+            <span>MIDI ART ENGINE</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- Confirmation Dialog -->
+<div id="confirm-dialog" class="dialog-overlay" style="display: none">
+  <div class="dialog">
+    <p>THIS WILL REPLACE YOUR CURRENT SEQUENCE. CONTINUE?</p>
+    <div class="dialog-buttons">
+      <button id="confirm-cancel" class="hw-button hw-button-black">CANCEL</button>
+      <button id="confirm-ok" class="hw-button hw-button-white">CONFIRM</button>
+    </div>
+  </div>
+</div>
+
+<!-- App Scripts -->
+<script src="https://unpkg.com/tone@14"></script>
+<script src="https://unpkg.com/midi-writer-js@2.1.4/browser/midiwriter.js"></script>
+<script src="{{ '/projects/midi-art/fonts.js' | relative_url }}"></script>
+<script src="{{ '/projects/midi-art/piano-roll.js' | relative_url }}"></script>
+<script src="{{ '/projects/midi-art/playback.js' | relative_url }}"></script>
+<script src="{{ '/projects/midi-art/midi-export.js' | relative_url }}"></script>
+<script src="{{ '/projects/midi-art/app.js' | relative_url }}"></script>

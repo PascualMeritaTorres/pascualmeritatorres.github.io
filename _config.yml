@@ -239,6 +239,8 @@ exclude:
   - README.md
   - vendor
   - CLAUDE.md
+  - TEXT2MIDIART_PRD.md
+  - TEXT2MIDIART_PROGRESS.md
 keep_files:
   - CNAME
   - .nojekyll

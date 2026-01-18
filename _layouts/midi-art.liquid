@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {{ page.title }}
+      |
+      {{ site.first_name }}
+      {{ site.last_name }}
+    </title>
+
+    <!-- Bootstrap & MDB (for navbar) -->
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
+    <link
+      rel="stylesheet"
+      href="{{ site.third_party_libraries.mdb.url.css }}"
+      integrity="{{ site.third_party_libraries.mdb.integrity.css }}"
+      crossorigin="anonymous"
+    >
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ site.third_party_libraries.google_fonts.url.fonts }}"
+    >
+
+    <!-- Main CSS (includes navbar styles) -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+
+    <!-- Favicon -->
+    {% if site.icon.size <= 4 %}
+      <link
+        rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>"
+      >
+    {% elsif site.icon != blank %}
+      <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
+    {% endif %}
+
+    <!-- Theme JS -->
+    <script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
+
+    <!-- App-specific styles -->
+    <link rel="stylesheet" href="{{ page.app_css | relative_url }}">
+  </head>
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %}">
+    <!-- Header (site navigation) -->
+    {% include header.liquid %}
+
+    <!-- App Content (no container wrapper) -->
+    {{ content }}
+
+    <!-- jQuery and Bootstrap JS (for navbar toggle) -->
+    {% include scripts/jquery.liquid %}
+    {% include scripts/bootstrap.liquid %}
+  </body>
+</html>
