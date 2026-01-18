@@ -1,14 +1,13 @@
+# GitHub repositories to display on the /repositories/ page
+# See: https://github.com/anuraghazra/github-readme-stats
+
 github_users:
-  - torvalds
-  - alshedivat
+  - PascualMeritaTorres
 
 repo_description_lines_max: 2
 
+# Add your pinned/featured repositories here
+# Format: username/repo-name
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  # Add your repositories here, e.g.:
+  # - PascualMeritaTorres/some-project
