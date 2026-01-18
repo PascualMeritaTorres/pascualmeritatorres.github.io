@@ -30,7 +30,6 @@ class Text2MidiArt {
 
     this.clearNotesBtn = document.getElementById("clear-notes-btn");
 
-    this.chips = document.querySelectorAll(".preset-btn");
     this.noteCount = document.getElementById("note-count");
     this.statusIndicator = document.getElementById("status-indicator");
 
@@ -92,17 +91,6 @@ class Text2MidiArt {
     // Export
     this.exportBtn.addEventListener("click", () => this.handleExport());
 
-    // Chips (suggestions)
-    this.chips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        const preset = chip.dataset.preset;
-        this.textInput.value = preset;
-        this.updateCharCount();
-        this.clearError();
-        this.updateChipSelection();
-      });
-    });
-
     // Dialog
     this.confirmCancel.addEventListener("click", () => this.hideConfirmDialog());
     this.confirmOk.addEventListener("click", () => this.confirmGenerate());
@@ -157,14 +145,6 @@ class Text2MidiArt {
   updateCharCount() {
     const count = this.textInput.value.length;
     this.charCount.textContent = count;
-    this.updateChipSelection();
-  }
-
-  updateChipSelection() {
-    const typed = this.textInput.value.toUpperCase();
-    this.chips.forEach((chip) => {
-      chip.classList.toggle("selected", chip.dataset.preset === typed);
-    });
   }
 
   showError(message) {

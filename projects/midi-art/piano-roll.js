@@ -266,9 +266,13 @@ class PianoRoll {
   }
 
   bindEvents() {
-    // Sync keyboard scroll with grid scroll
+    // Sync keyboard scroll with grid scroll (bidirectional)
     this.gridWrapper.addEventListener("scroll", () => {
       this.keyboard.scrollTop = this.gridWrapper.scrollTop;
+    });
+
+    this.keyboard.addEventListener("scroll", () => {
+      this.gridWrapper.scrollTop = this.keyboard.scrollTop;
     });
 
     // Piano keyboard click - preview notes

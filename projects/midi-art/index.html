@@ -41,23 +41,6 @@ app_css: /projects/midi-art/styles.css
           </button>
         </div>
       </div>
-
-      <!-- Tempo & Zoom (right) -->
-      <div class="header-right">
-        <div class="header-tempo">
-          <button class="hw-button-tiny" id="tempo-down">−</button>
-          <span class="control-value"><span id="tempo-value">120</span> BPM</span>
-          <button class="hw-button-tiny" id="tempo-up">+</button>
-        </div>
-
-        <div class="header-divider"></div>
-
-        <div class="header-zoom">
-          <button class="hw-button-tiny" id="zoom-out-btn">−</button>
-          <span class="control-value">ZOOM</span>
-          <button class="hw-button-tiny" id="zoom-in-btn">+</button>
-        </div>
-      </div>
     </header>
 
     <!-- LCD Display Section (Piano Roll) -->
@@ -82,7 +65,24 @@ app_css: /projects/midi-art/styles.css
       </div>
       <div class="lcd-labels">
         <span class="lcd-label lcd-label-left">SEQUENCE DISPLAY</span>
-        <span class="lcd-label lcd-label-right" id="status-indicator">READY</span>
+        <div class="lcd-controls">
+          <div class="lcd-tempo">
+            <button class="hw-button-tiny" id="tempo-down">−</button>
+            <span class="control-value"><span id="tempo-value">120</span> BPM</span>
+            <button class="hw-button-tiny" id="tempo-up">+</button>
+          </div>
+          <div class="lcd-zoom">
+            <button class="hw-button-tiny" id="zoom-out-btn">−</button>
+            <span class="control-value">ZOOM</span>
+            <button class="hw-button-tiny" id="zoom-in-btn">+</button>
+          </div>
+          <button class="lcd-export-btn" id="export-btn" title="Export MIDI">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="10" height="10">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor" />
+            </svg>
+            <span>EXPORT</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -112,17 +112,6 @@ app_css: /projects/midi-art/styles.css
         </div>
       </div>
       <div id="input-error" class="error-message"></div>
-
-      <!-- Presets Row -->
-      <div class="presets-row">
-        <span class="presets-label">PRESETS</span>
-        <div class="presets-buttons">
-          <button class="preset-btn preset-btn-chunky" data-preset="HELLO">HELLO</button>
-          <button class="preset-btn preset-btn-chunky" data-preset="MUSIC">MUSIC</button>
-          <button class="preset-btn preset-btn-chunky" data-preset="LOVE">LOVE</button>
-          <button class="preset-btn preset-btn-chunky" data-preset="HI MOM">HI MOM</button>
-        </div>
-      </div>
     </section>
 
     <!-- Footer Status -->
@@ -134,12 +123,6 @@ app_css: /projects/midi-art/styles.css
           <span>NOTES: <span id="note-count">0</span></span>
         </div>
         <div class="footer-right">
-          <button class="hw-button hw-button-grey export-btn-footer" id="export-btn">
-            <svg class="btn-icon" viewBox="0 0 24 24" width="10" height="10">
-              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor" />
-            </svg>
-            <span>EXPORT MIDI</span>
-          </button>
           <div class="footer-branding">
             <span>TXT-2MA</span>
             <span>MIDI ART ENGINE</span>

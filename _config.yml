@@ -241,6 +241,7 @@ exclude:
   - CLAUDE.md
   - TEXT2MIDIART_PRD.md
   - TEXT2MIDIART_PROGRESS.md
+  - .cursor/
 keep_files:
   - CNAME
   - .nojekyll
