@@ -92,11 +92,6 @@ class PianoRoll {
       key.className = `piano-key ${isBlack ? "black-key" : "white-key"}`;
       key.dataset.midi = midi;
 
-      // Only show labels for C notes and A0
-      if (noteInfo.name === "C" || midi === this.lowestNote) {
-        key.textContent = noteInfo.full;
-      }
-
       this.keyboard.appendChild(key);
     }
   }

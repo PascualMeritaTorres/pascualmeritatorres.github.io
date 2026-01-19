@@ -58,7 +58,7 @@
 
   /* Piano Roll - compact to show more notes */
   --key-width: 32px;
-  --row-height: 7px;
+  --row-height: 6px;
   --col-width: 12px;
 }
 
@@ -595,7 +595,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   padding-right: 4px;
-  font-size: 7px;
+  font-size: 5px;
   font-weight: 600;
   font-family: var(--font);
   letter-spacing: 0.3px;
