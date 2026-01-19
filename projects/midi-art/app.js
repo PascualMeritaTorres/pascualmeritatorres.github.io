@@ -190,7 +190,7 @@ class Text2MidiArt {
 
     // Click to open file picker
     this.imageDropZone.addEventListener("click", (e) => {
-      if (e.target !== this.imageClearBtn && !this.imageClearBtn?.contains(e.target)) {
+      if (e.target !== this.imageClearBtn && !(this.imageClearBtn && this.imageClearBtn.contains(e.target))) {
         this.imageInput.click();
       }
     });
