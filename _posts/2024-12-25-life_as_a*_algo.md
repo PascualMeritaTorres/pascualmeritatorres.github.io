@@ -16,7 +16,7 @@ def action_value(action):
 best_action = min(possible_actions, key=action_value)
 ```
 
-Recently I was listening to a Y Combinator's podcast on [how to make the most out of your 20s](https://www.youtube.com/watch?v=H_XMqRhLhic). They all agreed that you should tackle hard problems while you're young. In fact they all encouraged people to "do the most hardcore thing early in your career, because you can always mellow out and take on less demanding work... but it's very hard to go the other way around". While I fundamentally agree with this, I think there's more to it. More specifically, you need to factor in whether these difficult challenges you're undertaking are going to be useful in your life. In other words, you want to minimise the regret of having taken such actions.
+Recently I was listening to a Y Combinator podcast on how to make the most out of your 20s. They all agreed that you should tackle hard problems while you're young. In fact they all encouraged people to "do the most hardcore thing early in your career, because you can always mellow out and take on less demanding work... but it's very hard to go the other way around". While I fundamentally agree with this, I think there's more to it. More specifically, you need to factor in whether these difficult challenges you're undertaking are going to be useful in your life. In other words, you want to minimise the regret of having taken such actions.
 
 Anyways, this immediately reminds me of the A\* algorithm.
 
