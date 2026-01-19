@@ -54,37 +54,32 @@ class MidiExport {
     // Get all unique start times, sorted
     const startTimes = [...noteGroups.keys()].sort((a, b) => a - b);
 
+    // Each 16th note = ticksPerBeat / 4
+    const ticksPerSixteenth = this.ticksPerBeat / 4;
+
     startTimes.forEach((startTime) => {
       const group = noteGroups.get(startTime);
 
-      // Calculate wait time (delta) from previous position
-      // Each 16th note = ticksPerBeat / 4
-      const ticksPerSixteenth = this.ticksPerBeat / 4;
-      const targetTick = startTime * ticksPerSixteenth;
-      const wait = targetTick - currentTick;
+      // Calculate tick positions (must be integers)
+      const targetTick = Math.round(startTime * ticksPerSixteenth);
+      const wait = Math.max(0, targetTick - currentTick);
 
       // Create note event for the chord
       const pitches = group.map((n) => n.pitch);
-      const duration = group[0].duration; // Use first note's duration
+      const duration = group[0].duration;
 
-      // Duration in ticks
-      const durationTicks = duration * ticksPerSixteenth;
-
-      // Convert duration to MIDI-Writer-JS format
-      // T + number = ticks
-      const durationString = `T${durationTicks}`;
+      // Duration in ticks (minimum 1 tick)
+      const durationTicks = Math.max(1, Math.round(duration * ticksPerSixteenth));
 
       const noteEvent = new MidiWriter.NoteEvent({
         pitch: pitches,
-        duration: durationString,
+        duration: `T${durationTicks}`,
         velocity: 100,
         wait: `T${wait}`,
       });
 
       track.addEvent(noteEvent);
-
-      // Update current position
-      currentTick = targetTick + durationTicks;
+      currentTick = targetTick;
     });
 
     // Generate the MIDI file
@@ -115,7 +110,7 @@ class MidiExport {
    */
   generateFilename(text) {
     if (!text || text.trim().length === 0) {
-      return "text2midiart";
+      return "midi-art-gen";
     }
 
     // Clean up text for filename
@@ -125,6 +120,6 @@ class MidiExport {
       .replace(/\s+/g, "-")
       .replace(/[^a-z0-9-]/g, "");
 
-    return `text2midiart-${clean}`;
+    return `midi-art-gen-${clean}`;
   }
 }
