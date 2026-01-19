@@ -54,11 +54,15 @@ app_css: /projects/midi-art/styles.css
             CLEAR
           </button>
           <div class="piano-roll-container">
+            <div class="timeline-corner"></div>
+            <div class="timeline" id="timeline"></div>
             <div class="piano-keyboard" id="piano-keyboard"></div>
             <div class="piano-grid-wrapper" id="piano-grid-wrapper">
               <canvas id="piano-grid"></canvas>
-              <div class="playhead" id="playhead"></div>
               <div class="notes-container" id="notes-container"></div>
+            </div>
+            <div class="playhead" id="playhead">
+              <div class="playhead-handle" id="playhead-handle"></div>
             </div>
           </div>
         </div>

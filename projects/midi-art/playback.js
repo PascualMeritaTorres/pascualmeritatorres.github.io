@@ -193,6 +193,20 @@ class Playback {
     Tone.Transport.loop = enabled;
   }
 
+  // Seek to position (in 16th notes)
+  seek(position) {
+    const time = Tone.Time(`0:0:${position}`).toSeconds();
+    Tone.Transport.seconds = time;
+
+    // Update playhead immediately
+    this.onPlayheadUpdate(position);
+
+    // If playing, reschedule notes
+    if (this.isPlaying) {
+      this.scheduleNotes();
+    }
+  }
+
   dispose() {
     this.stop();
     if (this.synth) {

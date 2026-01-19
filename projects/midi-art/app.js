@@ -55,10 +55,14 @@ class Text2MidiArt {
     this.pianoRoll = new PianoRoll({
       onNotePreview: (midi) => this.playback.previewNote(midi),
       onNotesChange: (notes) => this.onNotesChange(notes),
+      onSeek: (position) => this.handleSeek(position),
     });
 
     // Track active notes for visual feedback (handles overlapping notes)
     this.activeNoteCounts = {};
+
+    // Track playhead position for scroll sync
+    this.currentPlayheadPosition = 0;
 
     this.playback = new Playback({
       bpm: this.tempo,
@@ -310,6 +314,11 @@ class Text2MidiArt {
     this.zoomInBtn.addEventListener("click", () => this.pianoRoll.zoomIn());
     this.zoomOutBtn.addEventListener("click", () => this.pianoRoll.zoomOut());
 
+    // Sync playhead position on scroll
+    this.pianoRoll.gridWrapper.addEventListener("scroll", () => {
+      this.renderPlayhead();
+    });
+
     // Export
     this.exportBtn.addEventListener("click", () => this.handleExport());
 
@@ -531,6 +540,13 @@ class Text2MidiArt {
     this.clearAllPianoKeyHighlights();
   }
 
+  handleSeek(position) {
+    this.clearAllPianoKeyHighlights();
+    this.playback.seek(position);
+    // Show playhead when seeking
+    this.playhead.classList.add("visible");
+  }
+
   updatePlayButton(isPlaying) {
     this.playIcon.style.display = isPlaying ? "none" : "block";
     this.pauseIcon.style.display = isPlaying ? "block" : "none";
@@ -545,13 +561,25 @@ class Text2MidiArt {
   }
 
   updatePlayhead(position) {
-    const effectiveColWidth = this.pianoRoll.colWidth * this.pianoRoll.zoom;
-    const x = position * effectiveColWidth;
-    this.playhead.style.left = `${x}px`;
+    this.currentPlayheadPosition = position;
+    this.renderPlayhead();
 
     if (position === 0 && !this.playback.isPlaying) {
       this.playhead.classList.remove("visible");
     }
+  }
+
+  renderPlayhead() {
+    const effectiveColWidth = this.pianoRoll.colWidth * this.pianoRoll.zoom;
+    const scrollLeft = this.pianoRoll.gridWrapper.scrollLeft;
+    const keyWidth = this.pianoRoll.keyWidth;
+    const x = this.currentPlayheadPosition * effectiveColWidth - scrollLeft + keyWidth;
+    this.playhead.style.left = `${x}px`;
+
+    // Hide playhead if it's scrolled out of view
+    const containerWidth = this.pianoRoll.gridWrapper.clientWidth;
+    const isVisible = x >= keyWidth && x <= keyWidth + containerWidth;
+    this.playhead.style.opacity = isVisible ? "1" : "0";
   }
 
   handleExport() {

@@ -10,6 +10,8 @@ class PianoRoll {
     this.canvas = document.getElementById("piano-grid");
     this.notesContainer = document.getElementById("notes-container");
     this.playhead = document.getElementById("playhead");
+    this.playheadHandle = document.getElementById("playhead-handle");
+    this.timeline = document.getElementById("timeline");
     this.ctx = this.canvas.getContext("2d");
 
     // Configuration
@@ -39,6 +41,10 @@ class PianoRoll {
     // Callbacks
     this.onNotePreview = options.onNotePreview || (() => {});
     this.onNotesChange = options.onNotesChange || (() => {});
+    this.onSeek = options.onSeek || (() => {});
+
+    // Playhead dragging state
+    this.isDraggingPlayhead = false;
 
     // Initialize
     this.init();
@@ -55,7 +61,9 @@ class PianoRoll {
     this.renderKeyboard();
     this.setupCanvas();
     this.renderGrid();
+    this.renderTimeline();
     this.bindEvents();
+    this.bindTimelineEvents();
     this.scrollToCenter();
   }
 
@@ -99,6 +107,7 @@ class PianoRoll {
       this.updateDimensions();
       this.resizeCanvas();
       this.renderGrid();
+      this.renderTimeline();
       this.renderNotes();
     });
   }
@@ -115,8 +124,7 @@ class PianoRoll {
     this.notesContainer.style.width = `${width}px`;
     this.notesContainer.style.height = `${height}px`;
 
-    // Update playhead height to match canvas
-    this.playhead.style.height = `${height}px`;
+    // Playhead height is now 100% of container via CSS
   }
 
   renderGrid() {
@@ -176,12 +184,87 @@ class PianoRoll {
     }
   }
 
+  renderTimeline() {
+    if (!this.timeline) return;
+
+    const effectiveColWidth = this.colWidth * this.zoom;
+    const totalWidth = this.totalColumns * effectiveColWidth;
+    const barWidth = 16 * effectiveColWidth; // 16 sixteenth notes = 1 bar
+
+    // Create or update timeline inner container
+    let inner = this.timeline.querySelector(".timeline-inner");
+    if (!inner) {
+      inner = document.createElement("div");
+      inner.className = "timeline-inner";
+      this.timeline.appendChild(inner);
+    }
+
+    inner.innerHTML = "";
+    inner.style.width = `${totalWidth}px`;
+
+    // Add bar markers
+    const numBars = Math.ceil(this.totalColumns / 16);
+    for (let i = 0; i <= numBars; i++) {
+      const marker = document.createElement("div");
+      marker.className = "timeline-bar";
+      marker.style.left = `${i * barWidth}px`;
+      marker.textContent = i + 1;
+      inner.appendChild(marker);
+    }
+  }
+
+  bindTimelineEvents() {
+    if (!this.timeline) return;
+
+    // Sync timeline scroll with grid scroll
+    this.gridWrapper.addEventListener("scroll", () => {
+      this.timeline.scrollLeft = this.gridWrapper.scrollLeft;
+    });
+
+    // Click on timeline to seek
+    this.timeline.addEventListener("click", (e) => {
+      if (this.isDraggingPlayhead) return;
+      const rect = this.timeline.getBoundingClientRect();
+      const x = e.clientX - rect.left + this.timeline.scrollLeft;
+      const position = x / (this.colWidth * this.zoom);
+      this.onSeek(Math.max(0, position));
+    });
+
+    // Playhead handle drag
+    if (this.playheadHandle) {
+      this.playheadHandle.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.isDraggingPlayhead = true;
+        this.playheadHandle.classList.add("dragging");
+        document.body.style.cursor = "grabbing";
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!this.isDraggingPlayhead) return;
+        const rect = this.gridWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left + this.gridWrapper.scrollLeft;
+        const position = x / (this.colWidth * this.zoom);
+        this.onSeek(Math.max(0, position));
+      });
+
+      document.addEventListener("mouseup", () => {
+        if (this.isDraggingPlayhead) {
+          this.isDraggingPlayhead = false;
+          this.playheadHandle.classList.remove("dragging");
+          document.body.style.cursor = "";
+        }
+      });
+    }
+  }
+
   setNotes(notes) {
     this.notes = notes.map((n) => ({ ...n }));
     this.isDirty = false;
     this.updateTotalColumns();
     this.resizeCanvas();
     this.renderGrid();
+    this.renderTimeline();
     this.renderNotes();
     this.scrollToContent();
   }
@@ -574,6 +657,7 @@ class PianoRoll {
     this.zoom = Math.max(this.minZoom, Math.min(this.maxZoom, newZoom));
     this.resizeCanvas();
     this.renderGrid();
+    this.renderTimeline();
     this.renderNotes();
   }
 

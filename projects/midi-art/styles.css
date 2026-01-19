@@ -523,11 +523,56 @@ body {
    ============================================ */
 
 .piano-roll-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--key-width) 1fr;
+  grid-template-rows: 20px 1fr;
   height: 380px;
   overflow: hidden;
   position: relative;
   z-index: 1;
+}
+
+/* Timeline corner (top-left empty space) */
+.timeline-corner {
+  background: var(--lcd-bg-alt);
+  border-right: 2px solid var(--lcd-bezel);
+  border-bottom: 1px solid var(--lcd-border);
+}
+
+/* Timeline ruler */
+.timeline {
+  background: var(--lcd-bg-alt);
+  border-bottom: 1px solid var(--lcd-border);
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  cursor: pointer;
+  scrollbar-width: none;
+}
+
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-inner {
+  position: relative;
+  height: 100%;
+}
+
+.timeline-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 4px;
+  padding-bottom: 2px;
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--lcd-text);
+  opacity: 0.6;
+  border-left: 1px solid var(--lcd-border);
+  box-sizing: border-box;
 }
 
 .piano-keyboard {
@@ -664,17 +709,42 @@ body {
 
 .playhead {
   position: absolute;
-  top: 0;
+  top: 6px;
   width: 2px;
+  height: calc(100% - 6px);
   background: var(--lcd-text);
   pointer-events: none;
-  z-index: 10;
+  z-index: 20;
   display: none;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.1s;
 }
 
 .playhead.visible {
   display: block;
+}
+
+.playhead-handle {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--lcd-text);
+  border-radius: 1px;
+  cursor: grab;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.playhead-handle:hover {
+  background: #2d3a28;
+}
+
+.playhead-handle:active,
+.playhead-handle.dragging {
+  cursor: grabbing;
 }
 
 /* ============================================
