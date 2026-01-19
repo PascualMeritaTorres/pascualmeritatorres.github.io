@@ -442,6 +442,25 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* Mobile pan hint - hidden on desktop */
+.mobile-hint {
+  display: none;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 10;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--lcd-text);
+  background: var(--lcd-bg);
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--lcd-border);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 /* LCD Controls - Tempo, Zoom & Export below piano roll */
 .lcd-controls {
   display: flex;
@@ -634,8 +653,8 @@ body {
 }
 
 .piano-grid-wrapper::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 .piano-grid-wrapper::-webkit-scrollbar-track {
@@ -644,7 +663,11 @@ body {
 
 .piano-grid-wrapper::-webkit-scrollbar-thumb {
   background: var(--lcd-border);
-  border-radius: 1px;
+  border-radius: 2px;
+}
+
+.piano-grid-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--lcd-bezel);
 }
 
 #piano-grid {
@@ -1415,6 +1438,34 @@ body {
     height: 450px;
   }
 
+  /* Show mobile pan hint */
+  .mobile-hint {
+    display: block;
+  }
+
+  /* Larger scrollbars for touch devices */
+  .piano-grid-wrapper {
+    scrollbar-width: auto;
+  }
+
+  .piano-grid-wrapper::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .piano-grid-wrapper::-webkit-scrollbar-thumb {
+    background: var(--lcd-bezel);
+    border: 3px solid var(--lcd-bg-alt);
+    border-radius: 8px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  .piano-grid-wrapper::-webkit-scrollbar-thumb:hover,
+  .piano-grid-wrapper::-webkit-scrollbar-thumb:active {
+    background: var(--lcd-text);
+  }
+
   :root {
     --key-width: 28px;
     --row-height: 8px;
@@ -1562,6 +1613,19 @@ body {
   /* Increased piano roll height */
   .piano-roll-container {
     height: 500px;
+  }
+
+  /* Even larger scrollbars on small phones */
+  .piano-grid-wrapper::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .piano-grid-wrapper::-webkit-scrollbar-thumb {
+    border: 4px solid var(--lcd-bg-alt);
+    border-radius: 10px;
+    min-height: 50px;
+    min-width: 50px;
   }
 
   :root {

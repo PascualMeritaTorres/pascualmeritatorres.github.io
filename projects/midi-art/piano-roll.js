@@ -38,6 +38,11 @@ class PianoRoll {
     this.longPressDelay = 500; // ms
     this.lastNoteDuration = 4; // Default: quarter note (4 sixteenth notes)
 
+    // Two-finger pan state
+    this.isPanning = false;
+    this.panStartScroll = { x: 0, y: 0 };
+    this.panStartTouch = { x: 0, y: 0 };
+
     // Callbacks
     this.onNotePreview = options.onNotePreview || (() => {});
     this.onNotesChange = options.onNotesChange || (() => {});
@@ -437,6 +442,26 @@ class PianoRoll {
   }
 
   handlePointerDown(e, type) {
+    // Two-finger pan detection for touch
+    if (type === "touch" && e.touches && e.touches.length >= 2) {
+      e.preventDefault();
+      this.isPanning = true;
+      this.dragState = null; // Cancel any note interaction
+
+      // Calculate center point of two touches
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+      this.panStartTouch = {
+        x: (touch1.clientX + touch2.clientX) / 2,
+        y: (touch1.clientY + touch2.clientY) / 2,
+      };
+      this.panStartScroll = {
+        x: this.gridWrapper.scrollLeft,
+        y: this.gridWrapper.scrollTop,
+      };
+      return;
+    }
+
     const pos = this.getPointerPosition(e, type);
     if (!pos) return;
 
@@ -495,6 +520,30 @@ class PianoRoll {
   }
 
   handlePointerMove(e, type) {
+    // Handle two-finger panning
+    if (type === "touch" && this.isPanning && e.touches && e.touches.length >= 2) {
+      e.preventDefault();
+
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+      const currentCenter = {
+        x: (touch1.clientX + touch2.clientX) / 2,
+        y: (touch1.clientY + touch2.clientY) / 2,
+      };
+
+      const deltaX = this.panStartTouch.x - currentCenter.x;
+      const deltaY = this.panStartTouch.y - currentCenter.y;
+
+      this.gridWrapper.scrollLeft = this.panStartScroll.x + deltaX;
+      this.gridWrapper.scrollTop = this.panStartScroll.y + deltaY;
+      return;
+    }
+
+    // If panning was active but now only one finger, don't create notes
+    if (type === "touch" && this.isPanning) {
+      return;
+    }
+
     if (!this.dragState) return;
 
     const pos = this.getPointerPosition(e, type);
@@ -561,6 +610,12 @@ class PianoRoll {
     if (this.longPressTimer) {
       clearTimeout(this.longPressTimer);
       this.longPressTimer = null;
+    }
+
+    // Reset panning state
+    if (this.isPanning) {
+      this.isPanning = false;
+      return;
     }
 
     if (!this.dragState) return;
