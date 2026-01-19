@@ -16,7 +16,7 @@ social: true # includes social icons at the bottom of the page
 latest_posts: false
 ---
 
-I'm currently building [Mozart AI](https://mozartai.com/). Mozart AI is a Digital Audio Workstation (DAW) with built-in AI Co-Production. We empower what we call the 'Hybrid Musician', an artist driven by human creativity and assisted by AI. Human work will slowly shift toward high-level tasks while AI handles (more) routine operations. At Mozart, we want artists to stay in their creative flow, while AI takes care of the tedious components and sometimes even throws in a spark of inspiration.
+I'm currently building [Mozart AI](https://mozartai.com/). Mozart AI is a Digital Audio Workstation (DAW) with built-in AI Co-Production. We empower what we call the 'Hybrid Musician', an artist driven by human creativity and assisted by AI. Human work will slowly shift toward high-level tasks while AI handles (more) routine operations. Applied to music, this means helping artists stay in their creative flow, while AI takes care of the tedious components and sometimes even throws in a spark of inspiration. You could say we want people to become "vibe musicians".
 
 Previously I was an AI Research Engineer at Huawei, where I focused on Retrieval Augmented Generation (RAG) under the supervision of [Pavlos Vougiouklis](https://scholar.google.com/citations?hl=en&user=9J7YeR0AAAAJ&view_op=list_works&sortby=pubdate) and [Jeff Pan](https://scholar.google.com/citations?user=zLDAY8QAAAAJ&hl=es). If you're interested in learning a bit more about me, please take a look at some of [my blog posts](https://pascualmeritatorres.github.io/blog/).
 
@@ -24,7 +24,7 @@ Prior to joining Huawei, I earned my Master's degree in AI from The University o
 
 Before that, I earned a BSc in Computer Science from King's College London. My thesis focused on 'Similarity-based Music Recommendation Systems', where I employed various CNNs to recommend songs similar to a given input.
 
-Overall, I would say I am driven by two different kinds of projects: One kind consists of projects that have a significant, tangible impact on other people's lives. The other kind are those which pose questions that motivate me from a philosophical perspective. I am happiest when I can work on a project that ticks both boxes. Learn more about what I am optimising for in life right now in [this blogpost](https://pascualmeritatorres.github.io/blog/2025/life_as_a-_algo/).
+Overall, I would say I am driven by two different kinds of projects: One kind consists of projects that have a significant, tangible impact on other people's lives. The other kind are those which pose questions that motivate me from a philosophical perspective. I am happiest when I can work on a project that ticks both boxes. Mozart AI ticks both because we're trying to reinvent what it means to be an artist in 2026, which needs a lot of thinking, and we're impacting (hopefully positively) millions of musicians' lives in the process.
 
 <br/>
 
