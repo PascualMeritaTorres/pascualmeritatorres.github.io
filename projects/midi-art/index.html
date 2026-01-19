@@ -1,6 +1,6 @@
 ---
 layout: midi-art
-title: Text to MIDI Art
+title: midi art generator
 app_css: /projects/midi-art/styles.css
 ---
 
@@ -17,8 +17,8 @@ app_css: /projects/midi-art/styles.css
       <div class="header-left">
         <div class="vent-grid"></div>
         <div class="header-title">
-          <span class="model">TXT-2MA</span>
-          <span class="model-sub">TEXT TO MIDI ART GENERATOR</span>
+          <span class="model">IMG-2MA</span>
+          <span class="model-sub">MIDI ART GENERATOR</span>
         </div>
       </div>
 
@@ -94,6 +94,7 @@ app_css: /projects/midi-art/styles.css
       <!-- Control Panel Unit -->
       <div class="control-panel">
         <div class="control-panel-inner">
+          <!-- Text Input -->
           <div class="control-input-group">
             <div class="input-frame">
               <input type="text" id="text-input" class="text-input" placeholder="ENTER TEXT..." maxlength="30" autocomplete="off" />
@@ -101,6 +102,42 @@ app_css: /projects/midi-art/styles.css
             </div>
             <span class="control-panel-label">TEXT INPUT</span>
           </div>
+
+          <!-- OR Separator -->
+          <div class="input-separator">
+            <span>OR</span>
+          </div>
+
+          <!-- Image Upload -->
+          <div class="control-input-group image-input-group">
+            <div class="image-drop-zone" id="image-drop-zone">
+              <input type="file" id="image-input" accept="image/jpeg,image/png,image/gif,image/webp" hidden />
+              <div class="drop-zone-content" id="drop-zone-content">
+                <svg class="drop-zone-icon" viewBox="0 0 24 24" width="20" height="20">
+                  <path
+                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="drop-zone-text">DROP IMAGE</span>
+              </div>
+              <div class="image-preview" id="image-preview" style="display: none">
+                <img id="preview-img" alt="Preview" />
+                <button class="image-clear-btn" id="image-clear-btn" title="Remove image">
+                  <svg viewBox="0 0 24 24" width="12" height="12">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <span class="control-panel-label">IMAGE INPUT</span>
+          </div>
+
+          <!-- Generate Button -->
           <div class="control-generate-group">
             <button class="hw-button hw-button-black generate-btn-large" id="generate-btn" title="GENERATE">
               <svg class="btn-icon" viewBox="0 0 24 24" width="24" height="24">
@@ -124,7 +161,7 @@ app_css: /projects/midi-art/styles.css
         </div>
         <div class="footer-right">
           <div class="footer-branding">
-            <span>TXT-2MA</span>
+            <span>IMG-2MA</span>
             <span>MIDI ART ENGINE</span>
           </div>
         </div>
@@ -148,6 +185,7 @@ app_css: /projects/midi-art/styles.css
 <script src="https://unpkg.com/tone@14"></script>
 <script src="https://unpkg.com/midi-writer-js@2.1.4/browser/midiwriter.js"></script>
 <script src="{{ '/projects/midi-art/fonts.js' | relative_url }}"></script>
+<script src="{{ '/projects/midi-art/image-processor.js' | relative_url }}"></script>
 <script src="{{ '/projects/midi-art/piano-roll.js' | relative_url }}"></script>
 <script src="{{ '/projects/midi-art/playback.js' | relative_url }}"></script>
 <script src="{{ '/projects/midi-art/midi-export.js' | relative_url }}"></script>

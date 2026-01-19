@@ -25,6 +25,7 @@ class Playback {
   async init() {
     // Create synth with piano-like sound
     this.synth = new Tone.PolySynth(Tone.Synth, {
+      maxPolyphony: 128, // Increased from default 32 for image-to-MIDI
       oscillator: {
         type: "triangle",
       },

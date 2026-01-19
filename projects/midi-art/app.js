@@ -1,15 +1,25 @@
 /**
  * Text2MidiArt - Main Application
+ * Supports both text input and image input for MIDI generation
  */
 
 class Text2MidiArt {
   constructor() {
-    // DOM Elements
+    // DOM Elements - Text Input
     this.textInput = document.getElementById("text-input");
     this.charCount = document.getElementById("char-count");
     this.generateBtn = document.getElementById("generate-btn");
     this.inputError = document.getElementById("input-error");
 
+    // DOM Elements - Image Input
+    this.imageDropZone = document.getElementById("image-drop-zone");
+    this.imageInput = document.getElementById("image-input");
+    this.dropZoneContent = document.getElementById("drop-zone-content");
+    this.imagePreview = document.getElementById("image-preview");
+    this.previewImg = document.getElementById("preview-img");
+    this.imageClearBtn = document.getElementById("image-clear-btn");
+
+    // DOM Elements - Transport
     this.playBtn = document.getElementById("play-btn");
     this.playIcon = document.getElementById("play-icon");
     this.pauseIcon = document.getElementById("pause-icon");
@@ -36,7 +46,10 @@ class Text2MidiArt {
     // State
     this.currentText = "";
     this.pendingText = null;
+    this.pendingImage = null;
+    this.currentImage = null;
     this.tempo = 120;
+    this.isProcessingImage = false;
 
     // Initialize modules
     this.pianoRoll = new PianoRoll({
@@ -52,12 +65,135 @@ class Text2MidiArt {
 
     this.midiExport = new MidiExport();
 
+    // Initialize image processor (lazy loaded)
+    this.imageProcessor = new ImageProcessor();
+
     // Bind events
     this.bindEvents();
+    this.bindImageEvents();
 
     // Initial state
     this.updateCharCount();
     this.updateTempoDisplay();
+
+    // Load default image
+    this.loadDefaultImage();
+  }
+
+  loadDefaultImage() {
+    const defaultImageUrl = "/projects/midi-art/apple-logo.jpg";
+
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      this.currentImage = img;
+      this.showImagePreview(defaultImageUrl);
+    };
+    img.onerror = () => {
+      console.warn("Default image not found:", defaultImageUrl);
+    };
+    img.src = defaultImageUrl;
+  }
+
+  bindImageEvents() {
+    if (!this.imageDropZone) return;
+
+    // Click to open file picker
+    this.imageDropZone.addEventListener("click", (e) => {
+      if (e.target !== this.imageClearBtn && !this.imageClearBtn?.contains(e.target)) {
+        this.imageInput.click();
+      }
+    });
+
+    // File input change
+    this.imageInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        this.handleImageFile(file);
+      }
+    });
+
+    // Drag and drop
+    this.imageDropZone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.imageDropZone.classList.add("drag-over");
+    });
+
+    this.imageDropZone.addEventListener("dragleave", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.imageDropZone.classList.remove("drag-over");
+    });
+
+    this.imageDropZone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.imageDropZone.classList.remove("drag-over");
+
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith("image/")) {
+        this.handleImageFile(file);
+      }
+    });
+
+    // Clear image button
+    if (this.imageClearBtn) {
+      this.imageClearBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.clearImage();
+      });
+    }
+  }
+
+  handleImageFile(file) {
+    // Validate file type
+    if (!file.type.startsWith("image/")) {
+      this.showError("Please select an image file (JPG, PNG, GIF, WebP)");
+      return;
+    }
+
+    // Validate file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      this.showError("Image too large. Maximum size is 10MB.");
+      return;
+    }
+
+    this.clearError();
+
+    // Create image element for processing
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      img.onload = () => {
+        this.currentImage = img;
+        this.showImagePreview(e.target.result);
+        // Clear text input when image is selected
+        this.textInput.value = "";
+        this.updateCharCount();
+      };
+      img.src = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  showImagePreview(dataUrl) {
+    if (this.previewImg && this.imagePreview && this.dropZoneContent) {
+      this.previewImg.src = dataUrl;
+      this.dropZoneContent.style.display = "none";
+      this.imagePreview.style.display = "flex";
+    }
+  }
+
+  clearImage() {
+    this.currentImage = null;
+    this.pendingImage = null;
+    if (this.imageInput) this.imageInput.value = "";
+    if (this.previewImg) this.previewImg.src = "";
+    if (this.dropZoneContent) this.dropZoneContent.style.display = "flex";
+    if (this.imagePreview) this.imagePreview.style.display = "none";
   }
 
   bindEvents() {
@@ -166,6 +302,12 @@ class Text2MidiArt {
   }
 
   handleGenerate() {
+    // Priority: Image first, then text
+    if (this.currentImage) {
+      this.handleImageGenerate();
+      return;
+    }
+
     const text = this.textInput.value;
 
     const validation = validateText(text);
@@ -185,6 +327,52 @@ class Text2MidiArt {
     this.generateNotes(text);
   }
 
+  async handleImageGenerate() {
+    if (this.isProcessingImage) return;
+
+    this.clearError();
+
+    if (this.pianoRoll.isDirty && this.pianoRoll.notes.length > 0) {
+      this.pendingImage = this.currentImage;
+      this.showConfirmDialog();
+      return;
+    }
+
+    await this.generateNotesFromImage(this.currentImage);
+  }
+
+  async generateNotesFromImage(imageElement) {
+    if (this.isProcessingImage) return;
+
+    this.isProcessingImage = true;
+    this.handleStop();
+    this.updateStatus("PROCESSING...");
+    this.generateBtn.disabled = true;
+
+    try {
+      const notes = await this.imageProcessor.processImage(imageElement);
+
+      if (notes.length === 0) {
+        this.showError("No contours found in image. Try a higher contrast image.");
+        this.updateStatus("READY");
+        return;
+      }
+
+      this.pianoRoll.setNotes(notes);
+      this.playback.setNotes(notes);
+      this.currentText = "image";
+      this.updateNoteCount(notes.length);
+      this.updateStatus("READY");
+    } catch (error) {
+      console.error("Image processing error:", error);
+      this.showError("Failed to process image. Please try another image.");
+      this.updateStatus("ERROR");
+    } finally {
+      this.isProcessingImage = false;
+      this.generateBtn.disabled = false;
+    }
+  }
+
   showConfirmDialog() {
     this.confirmDialog.style.display = "flex";
   }
@@ -192,12 +380,17 @@ class Text2MidiArt {
   hideConfirmDialog() {
     this.confirmDialog.style.display = "none";
     this.pendingText = null;
+    this.pendingImage = null;
   }
 
   confirmGenerate() {
     const textToGenerate = this.pendingText;
+    const imageToGenerate = this.pendingImage;
     this.hideConfirmDialog();
-    if (textToGenerate !== null) {
+
+    if (imageToGenerate !== null) {
+      this.generateNotesFromImage(imageToGenerate);
+    } else if (textToGenerate !== null) {
       this.generateNotes(textToGenerate);
     }
   }
