@@ -57,10 +57,15 @@ class Text2MidiArt {
       onNotesChange: (notes) => this.onNotesChange(notes),
     });
 
+    // Track active notes for visual feedback (handles overlapping notes)
+    this.activeNoteCounts = {};
+
     this.playback = new Playback({
       bpm: this.tempo,
       onPlayStateChange: (isPlaying) => this.updatePlayButton(isPlaying),
       onPlayheadUpdate: (position) => this.updatePlayhead(position),
+      onNoteStart: (midi) => this.onPlaybackNoteStart(midi),
+      onNoteEnd: (midi) => this.onPlaybackNoteEnd(midi),
     });
 
     this.midiExport = new MidiExport();
@@ -71,6 +76,7 @@ class Text2MidiArt {
     // Bind events
     this.bindEvents();
     this.bindImageEvents();
+    this.bindKeyboardPiano();
 
     // Initial state
     this.updateCharCount();
@@ -78,6 +84,86 @@ class Text2MidiArt {
 
     // Load default image
     this.loadDefaultImage();
+  }
+
+  bindKeyboardPiano() {
+    // Map computer keys to MIDI notes using piano-style layout
+    // Top row = black keys, home row = white keys (like a real piano)
+    //  W E   T Y U   O P      <- black keys
+    // A S D F G H J K L ; '   <- white keys
+    this.keyToMidi = {
+      // White keys (home row) - C4 to C6
+      KeyA: 60, // C4 (middle C)
+      KeyS: 62, // D4
+      KeyD: 64, // E4
+      KeyF: 65, // F4
+      KeyG: 67, // G4
+      KeyH: 69, // A4
+      KeyJ: 71, // B4
+      KeyK: 72, // C5
+      KeyL: 74, // D5
+      Semicolon: 76, // E5
+      Quote: 77, // F5
+
+      // Black keys (top row)
+      KeyW: 61, // C#4
+      KeyE: 63, // D#4
+      KeyT: 66, // F#4
+      KeyY: 68, // G#4
+      KeyU: 70, // A#4
+      KeyO: 73, // C#5
+      KeyP: 75, // D#5
+    };
+
+    this.activeKeys = new Set();
+
+    document.addEventListener("keydown", (e) => {
+      // Don't trigger if typing in text input
+      if (document.activeElement === this.textInput) return;
+
+      const midi = this.keyToMidi[e.code];
+      if (midi !== undefined && !this.activeKeys.has(e.code)) {
+        e.preventDefault();
+        this.activeKeys.add(e.code);
+        this.playback.previewNote(midi);
+        this.highlightPianoKey(midi, true);
+      }
+    });
+
+    document.addEventListener("keyup", (e) => {
+      const midi = this.keyToMidi[e.code];
+      if (midi !== undefined) {
+        this.activeKeys.delete(e.code);
+        this.highlightPianoKey(midi, false);
+      }
+    });
+  }
+
+  highlightPianoKey(midi, active) {
+    const key = document.querySelector(`.piano-key[data-midi="${midi}"]`);
+    if (key) {
+      key.classList.toggle("active", active);
+    }
+  }
+
+  onPlaybackNoteStart(midi) {
+    this.activeNoteCounts[midi] = (this.activeNoteCounts[midi] || 0) + 1;
+    this.highlightPianoKey(midi, true);
+  }
+
+  onPlaybackNoteEnd(midi) {
+    this.activeNoteCounts[midi] = (this.activeNoteCounts[midi] || 1) - 1;
+    if (this.activeNoteCounts[midi] <= 0) {
+      this.activeNoteCounts[midi] = 0;
+      this.highlightPianoKey(midi, false);
+    }
+  }
+
+  clearAllPianoKeyHighlights() {
+    document.querySelectorAll(".piano-key.active").forEach((key) => {
+      key.classList.remove("active");
+    });
+    this.activeNoteCounts = {};
   }
 
   loadDefaultImage() {
@@ -442,6 +528,7 @@ class Text2MidiArt {
 
   handleStop() {
     this.playback.stop();
+    this.clearAllPianoKeyHighlights();
   }
 
   updatePlayButton(isPlaying) {

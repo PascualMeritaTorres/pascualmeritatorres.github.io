@@ -14,6 +14,8 @@ class Playback {
     this.onPlayStateChange = options.onPlayStateChange || (() => {});
     this.onPlayheadUpdate = options.onPlayheadUpdate || (() => {});
     this.onLoopRestart = options.onLoopRestart || (() => {});
+    this.onNoteStart = options.onNoteStart || (() => {});
+    this.onNoteEnd = options.onNoteEnd || (() => {});
 
     // Playhead animation
     this.animationFrame = null;
@@ -84,11 +86,22 @@ class Playback {
       const duration = Tone.Time(`0:0:${note.duration}`).toSeconds();
       const noteName = this.midiToNoteName(note.pitch);
 
-      const eventId = Tone.Transport.schedule((time) => {
+      // Schedule note audio and visual start
+      const startEventId = Tone.Transport.schedule((time) => {
         this.synth.triggerAttackRelease(noteName, duration, time);
+        Tone.Draw.schedule(() => {
+          this.onNoteStart(note.pitch);
+        }, time);
       }, startTime);
 
-      this.scheduledEvents.push(eventId);
+      // Schedule visual end
+      const endEventId = Tone.Transport.schedule((time) => {
+        Tone.Draw.schedule(() => {
+          this.onNoteEnd(note.pitch);
+        }, time);
+      }, startTime + duration);
+
+      this.scheduledEvents.push(startEventId, endEventId);
     });
   }
 

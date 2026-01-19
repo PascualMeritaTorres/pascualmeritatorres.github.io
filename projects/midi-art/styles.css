@@ -574,6 +574,10 @@ body {
   filter: brightness(0.92);
 }
 
+.piano-key.active {
+  filter: brightness(0.85);
+}
+
 .piano-grid-wrapper {
   flex: 1;
   position: relative;
